@@ -7,33 +7,56 @@
 }
 
 body {
-    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; 
     box-sizing: border-box;
-    background: linear-gradient(to right, rgb(60, 125, 163), rgb(25, 79, 112), rgb(7, 77, 107) );
-  }
+    background: linear-gradient(to left,rgba(7, 27, 82, 1) 0%, rgba(0, 128, 128, 1) 100%);
+}
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
-  
-  .App {
-    
-    .card-list{
-      width: 85vw;
-      color: white;
-      display: grid;
-      margin: 0 auto;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-gap: 20px;
-            
+
+.App {
+  text-align: center;
+
+  .card-list{
+    width: 85vw;
+    color: white;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;  
+    margin-bottom: 50px;    
+  }
+  .search-box {
+    display: block;
+    margin: 30px auto;
+    height: 50px;
+    line-height: 30px;
+
+    &:not(:focus){
+      background-color: #95dada;
+      color: rgb(2, 87, 23);
     }
+    &:focus{
+      color: rgb(2, 87, 23);
+      outline: none;
+      height: 50px;
+    }
+  }
+
+  .heading{
+    font-family: bigelow rules;
+    font-size: 72px;
+    margin: 0 auto;
+    color: #40bbbb;
+  }
 }
 
 .card-container{
   display: flex;
-  direction: column;
+  flex-direction: column;
   background-color:#95dada;
   border-radius: 5px;
   border: 1px solid gray;
@@ -42,8 +65,30 @@ body {
   transition: all .3s;
   backface-visibility: hidden;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+
 
   &:hover{
     transform: scale(1.05);
   }
+
+  p {
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width : 600px){
+  .App {
+     
+    .card-list{
+      width: 85vw;
+      color: white;
+      display: grid;
+      margin: 0 auto;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+            
+    }
+}
 }
